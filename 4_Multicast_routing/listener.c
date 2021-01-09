@@ -10,7 +10,7 @@
 #define HELLO_GROUP "225.0.0.37"
 #define MSGBUFSIZE 25
 
-int main(int argc, char *argv[])
+int main()
 {
 	struct sockaddr_in addr;
 	int fd, nbytes,addrlen;
