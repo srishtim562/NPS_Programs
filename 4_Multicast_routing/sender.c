@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	struct sockaddr_in addr;
-	int fd, cnt;
+	int fd;
 	struct ip_mreq mreq;
 	char message[10];
 	strcpy(message, "RVCE-CSE");
