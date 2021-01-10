@@ -14,7 +14,7 @@ long int gcd(long int a, long int b)
 	return gcd(b, a%b);
 }
 
-long int isprime(long int a)
+int isprime(long int a)
 {
 	int i;
 	for(int i = 2; i < a; i++)
@@ -41,7 +41,7 @@ long int encrypt(long int ch, long int n, long int e)
 
 long int decrypt(long int ch, long int n, long int d)
 {
-        long int i,temp = ch;
+        long int i, temp = ch;
 
         for(i = 1; i < d; i++)
         {
@@ -62,7 +62,6 @@ int main()
 	scanf("%s", text);
 
 	len = strlen(text);
-
 
 	do
 	{
@@ -90,7 +89,7 @@ int main()
 	} while (((d * e) % phi) != 1);
 
 	printf("p = %ld, q = %ld\n", p,q);
-	printf("n(p * q) = %ld *  %ld = %ld\n", p, q, p*q);
+	printf("n(p * q) = %ld * %ld = %ld\n", p, q, p*q);
 	printf("(p - 1) * (q - 1) = %ld\n", phi);
 	printf("Public key (n, e): (%ld, %ld)\n", n, e);
 	printf("Private key (n, d): (%ld, %ld)\n", n, d);
@@ -98,14 +97,14 @@ int main()
 	for (i = 0; i < len; i++)
 		cipher[i] = encrypt(text[i], n, e);
 
-	printf("Encrypted message: \n");
+	printf("Encrypted message:\n");
 	for (i = 0; i < len; i++)
 		printf("%ld", cipher[i]);
 
 	for (i = 0; i < len; i++)
 		text[i] = decrypt(cipher[i], n, d);
 
-	printf("\nDecrypted message: \n");
+	printf("\nDecrypted message:\n");
 	for (i = 0; i < len; i++)
 		printf("%c", text[i]);
 
